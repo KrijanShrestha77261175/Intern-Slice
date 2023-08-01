@@ -3,6 +3,8 @@ import { Box, Flex } from "@chakra-ui/react";
 import React, {useState} from "react";
 import Collection from "./Collection";
 import { useNavigate } from "react-router-dom";
+import Content from "../Content";
+import PersonProfile from '../Profile/PersonProfile'
 
 const Tab = () => {
   const sliderLeft = [
@@ -31,10 +33,10 @@ const Tab = () => {
   return (
     <>
       <Flex
-      ml={"30px"}
+      ml={"24px"}
         h="43px"
         mt="18px"
-        mr="45px"
+        mr={{base:"0px",md:"45px"}}
         justifyContent="space-between"
         overflowX={{ base: "scroll", md: "auto" }}
         gap={{ base: "20px", md: "20px" }}
@@ -56,7 +58,7 @@ const Tab = () => {
           })}
         </Flex>
 
-        <Flex alignItems="center" gap="20px">
+        <Flex alignItems="center" gap="16px">
           {sliderRight.map((obj, index) => {
             return (
               <Box key={index} onClick={()=> handleClick(obj.name) }>
@@ -66,6 +68,8 @@ const Tab = () => {
           })}
         </Flex>
       </Flex>
+       <PersonProfile/>
+      <Content isActive={clickName}/> 
     </>
   );
 };

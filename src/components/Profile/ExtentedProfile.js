@@ -1,4 +1,6 @@
-import { Grid, GridItem, Text } from "@chakra-ui/react";
+import { Box, Button, Collapse, Grid, GridItem, Image, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import showToggle from "../../assets/svg/showToggle.svg";
 
 const ExtentedProfile = () => {
   const toFillData = [
@@ -24,31 +26,37 @@ const ExtentedProfile = () => {
     { name: "Entity Type", value: "Individual" },
     { name: "NACH Status", value: "-" },
   ];
+
+  const [show, setShow] = useState(false);
+  const HandleToggle = () => setShow(!show);
   return (
     <>
-      <Grid
-        mt={"30px"}
-        mb={"40px"}
-        px={"52px"}
-        templateColumns={{
-          base: "repeat(1,1fr)",
-          md: "repeat(2, 1fr)",
-          lg: "repeat(4, 1fr)",
-        }}
-      >
-        {toFillData.map((obj, index) => {
-          return (
-            <GridItem mb={"25px"} key={index}>
-              <Text fontSize={"14px"} fontWeight={"400"}>
-                {obj.name}
-              </Text>
-              <Text fontSize={"16px"} fontWeight={"500"} color={"#3E4954"}>
-                {obj.value}
-              </Text>
-            </GridItem>
-          );
-        })}
-      </Grid>
+      {/* <Collapse> */}
+        <Grid
+          mt={"30px"}
+          mb={"40px"}
+          px={"52px"}
+          templateColumns={{
+            base: "repeat(1,1fr)",
+            md: "repeat(2, 1fr)",
+            lg: "repeat(4, 1fr)",
+          }}
+        >
+          {toFillData.map((obj, index) => {
+            return (
+              <GridItem mb={"25px"} key={index}>
+                <Text fontSize={"14px"} fontWeight={"400"}>
+                  {obj.name}
+                </Text>
+                <Text fontSize={"16px"} fontWeight={"500"} color={"#3E4954"}>
+                  {obj.value}
+                </Text>
+              </GridItem>
+            );
+          })}
+        </Grid>
+       
+      {/* </Collapse> */}
     </>
   );
 };

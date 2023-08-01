@@ -1,5 +1,7 @@
 import {
   Box,
+  Divider,
+  Flex,
   Table,
   TableCaption,
   TableContainer,
@@ -13,6 +15,8 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { useTable } from "react-table";
+import UpcomingTable from "./UpcomingTable";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 
 const UpcomingPtp = () => {
   const data = React.useMemo(
@@ -114,17 +118,39 @@ const UpcomingPtp = () => {
   return (
     <>
       <Box>
-        <Box ml={"108px"} mt={"48px"}>
-          <Text
-            color="#3E4954"
-            fontFamily={'"Poppins", sans-serif'}
-            fontSize={"24px"}
-            fontWeight={"700"}
-          >
-            Upcoming PTP
-          </Text>
-        </Box>
+        <Divider
+          mt={"60px"}
+          orientation="horizontal"
+          w={"100vw"}
+          display={{ base: "block", md: "none" }}
+        />
+       
+          <Flex ml={{ base: "16px", lg: "108px" }} mt={{base:"22px", md:"48px"}} alignItems={"center"} justifyContent={"space-between"}>
+            <Text
+              color="#3E4954"
+              fontFamily={'"Poppins", sans-serif'}
+              fontSize={{base:"20px",md:"24px"}}
+              fontWeight={"700"}
+              whiteSpace={"nowrap"}
+            >
+              Upcoming PTP
+            </Text>
 
+            <ChevronRightIcon w="20px" h="20px" mr={"40px"} ml={"164px"} display={{base:"flex", md:"none"}}/>
+          </Flex>
+        
+        <Box display={{base:"none", md: "flex"}}>
+
+        <UpcomingTable />
+        </Box>
+        
+        <Divider
+          mt={"22px"}
+          orientation="horizontal"
+          w={"100vw"}
+          display={{ base: "block", md: "none" }}
+        />
+        {/* 
         <Box mx={"104px"}>
           <table {...getTableProps()}>
             <thead>
@@ -181,7 +207,7 @@ const UpcomingPtp = () => {
               })}
             </tbody>
           </table>
-        </Box>
+        </Box> */}
       </Box>
     </>
   );

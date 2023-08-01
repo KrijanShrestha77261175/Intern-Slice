@@ -10,6 +10,7 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  Select,
   Text,
   VStack,
   color,
@@ -29,6 +30,16 @@ const ContactRecordAction = () => {
     { name: "Next Action Time", type: "dropdown", placeHolder: "Select" },
     { name: "Remarks", type: "inputField", placeHolder: "Enter" },
   ];
+
+  const options = [
+    {name:"option1"},
+    {name:"option2"},
+
+    {name:"option3"},
+
+    {name:"option4"},
+
+  ]
 
   return (
     <>
@@ -69,32 +80,37 @@ const ContactRecordAction = () => {
                     {obj.name}
                   </Text>
                   {obj.type === "dropdown" ? (
-                    <Menu>
-                      <MenuButton
-                        w="250px"
-                        borderBottom={"1px solid #00000026"}
-                      >
-                        <HStack justifyContent={"space-between"}>
-                          <Text
-                            color={"#3E4954"}
-                            fontFamily={'"Poppins", sans-serif'}
-                            fontWeight={"500"}
-                            fontSize={"15px"}
-                            opacity={"0.5"}
-                          >
-                            {obj.placeHolder}
-                          </Text>
-                          <ChevronDownIcon />
-                        </HStack>
-                      </MenuButton>
-                      <MenuList>
-                        <MenuItem>Option1</MenuItem>
-                        <MenuItem>Option2</MenuItem>
-                        <MenuDivider />
-                        <MenuItem>Option3</MenuItem>
-                        <MenuItem>Option4</MenuItem>
-                      </MenuList>
-                    </Menu>
+                    // <Menu>
+                    //   <MenuButton
+                    //     w={{base:"140px",md:"190px",lg:"250px"}}
+                    //     borderBottom={"1px solid #00000026"}
+                    //   >
+                    //     <HStack justifyContent={"space-between"}>
+                    //       <Text
+                    //         color={"#3E4954"}
+                    //         fontFamily={'"Poppins", sans-serif'}
+                    //         fontWeight={"500"}
+                    //         fontSize={"15px"}
+                    //         opacity={"0.5"}
+                    //       >
+                    //         {obj.placeHolder}
+                    //       </Text>
+                    //       <ChevronDownIcon />
+                    //     </HStack>
+                    //   </MenuButton>
+                    //   <MenuList>
+                    //     <MenuItem>Option1</MenuItem>
+                    //     <MenuItem>Option2</MenuItem>
+                    //     <MenuDivider />
+                    //     <MenuItem>Option3</MenuItem>
+                    //     <MenuItem>Option4</MenuItem>
+                    //   </MenuList>
+                    // </Menu>
+                    <Select sx={{fontFamily:'"Poppins", sans-serif', color:"#3E4954", fontSize:"15px" ,opacity:"0.5"}} variant="flushed" placeholder="Select">
+                      {options.map((obj,index)=> {
+                        return <option key={index} sx={{fontFamily:'"Poppins", sans-serif', color:"#3E4954", fontSize:"15px" ,opacity:"0.5"}} value="option1">{obj.name}</option>
+                      })}
+                    </Select>
                   ) : (
                     <Input
                       sx={{
@@ -108,7 +124,7 @@ const ContactRecordAction = () => {
                       height={6}
                       _placeholder={{ opacity: "0.5", color: "inherit" }}
                       variant={"flushed"}
-                      w="250px"
+                      w={{ base: "140px", md: "190px", lg: "250px" }}
                       placeholder={obj.placeHolder}
                     />
                   )}

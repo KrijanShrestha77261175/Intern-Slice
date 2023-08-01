@@ -1,16 +1,19 @@
 import { Button, Divider, Flex, Grid, HStack, Text } from "@chakra-ui/react";
 import React from "react";
-import ContactRecordAction from "./ContactPage/ContactRecordAction";
-import UpcomingPtp from "./ContactPage/UpcomingPtp";
+import ContactRecordAction from "./ContactRecordAction";
+import UpcomingPtp from "./UpcomingPtp";
+import TabsAction from "./TabsAction";
 
 const Contact = () => {
   return (
     <>
       <Flex
-        mt={{base:"22px",md:"33px",lg:"33px"}}
-        px={{base:"16px",md:"42px", lg:"42px"}}
+        mt={{ base: "22px", md: "33px", lg: "33px" }}
+        ml={{ base: "16px", md: "42px", lg: "42px" }}
+        mr={{base:"0px",md:"45px"}}
         justifyContent={"space-between"}
         flexWrap={{ base: "wrap" }}
+        alignItems={"center"}
       >
         <Text
           fontFamily={'"Poppins", sans-serif'}
@@ -22,7 +25,10 @@ const Contact = () => {
           Contact
         </Text>
 
-        <Flex overflowX={{ base: "scroll", md: "auto" }} sx={{"&::-webkit-scrollbar": { appearance: "none", height: 0 },}} mt={{base:"20px"}}>
+        <Flex
+          overflowX={{ base: "scroll", md: "auto" }}
+          sx={{ "&::-webkit-scrollbar": { appearance: "none", height: 0 } }}
+        >
           <HStack gap={"11px"}>
             <Text
               fontFamily={'"Roboto", sans-serif'}
@@ -31,8 +37,6 @@ const Contact = () => {
             >
               Initiate:
             </Text>
-
-         
 
             <Button
               alignItems={"center"}
@@ -87,33 +91,41 @@ const Contact = () => {
               Reposession
             </Button>
 
-            <Divider w="1px" h="45px" ml={"30px "} mr={"30px"}orientation="vertical" />
-          <Button
-            alignItems={"center"}
-            border="1px solid #FF0909"
-            variant="outline"
-            p="8px 16px"
-            color={"#FF0909"}
-            fontFamily={'"Poppins", sans-serif'}
-            fontSize={"14px"}
-            fontWeight={"500"}
-            lineHeight={"24px"}
-            
-          >
-            Escalate
-          </Button>
+            <Divider
+              w="1px"
+              h="45px"
+              ml={"30px "}
+              mr={"30px"}
+              orientation="vertical"
+            />
+            <Button
+              alignItems={"center"}
+              border="1px solid #FF0909"
+              variant="outline"
+              p="8px 16px"
+              color={"#FF0909"}
+              fontFamily={'"Poppins", sans-serif'}
+              fontSize={"14px"}
+              fontWeight={"500"}
+              lineHeight={"24px"}
+            >
+              Escalate
+            </Button>
           </HStack>
-
-          
-
-          
         </Flex>
 
-        <Divider mt="18px" display={{md:"none", lg:"none"}} orientation="horizontal" width={"100%"} height={"1px"}/>
+        <Divider
+          mt="18px"
+          display={{ md: "none", lg: "none" }}
+          orientation="horizontal"
+          width={"100%"}
+          height={"1px"}
+        />
       </Flex>
 
       <ContactRecordAction />
-      <UpcomingPtp/>
+      <UpcomingPtp />
+      <TabsAction />
     </>
   );
 };

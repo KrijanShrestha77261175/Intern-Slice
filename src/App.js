@@ -1,20 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar';
-import Tab from './components/Tab';
-import { Box } from '@chakra-ui/react';
-import PersonProfile from './components/PersonProfile';
-import Contact from './components/CollectionComponent/Contact';
 
+import "./App.css";
+import { Box, Flex } from "@chakra-ui/react";
+import Body from "./components/Body";
+import FloatingBox from "./components/FloatingBox";
+import Layout from "./components/Layout/Layout";
+import AppRoutes from "./components/routes/AppRoutes";
+import Provider from "./components/Providers";
 
 function App() {
   return (
- <Box fontFamily="'Poppins', sans-serif">
- <Navbar/>
- <Tab/>
- <PersonProfile/>
- <Contact/>
- </Box>
+    <Provider>
+
+      <Box fontFamily="'Poppins', sans-serif">
+      <AppRoutes/>
+    
+    </Box>
+    </Provider>
+  
   );
 }
 

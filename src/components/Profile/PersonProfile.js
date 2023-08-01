@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Collapse,
   Divider,
   Flex,
   HStack,
@@ -10,83 +11,102 @@ import {
   TagCloseButton,
   TagLabel,
   Text,
+  useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import group191 from "../assets/svg/Group191.svg";
-import groupCall from "../assets/svg/GroupCall.svg";
-import group4787 from "../assets/svg/Group4787.svg";
-import groupLocation from "../assets/svg/GroupLocation.svg";
-import groupMail from "../assets/svg/GroupMail.svg";
-import addBtn from "../assets/svg/ADD.svg";
-import history1 from "../assets/svg/history1.svg";
+import group191 from "../../assets/svg/Group191.svg";
+import groupCall from "../../assets/svg/GroupCall.svg";
+import group4787 from "../../assets/svg/Group4787.svg";
+import groupLocation from "../../assets/svg/GroupLocation.svg";
+import groupMail from "../../assets/svg/GroupMail.svg";
+import addBtn from "../../assets/svg/ADD.svg";
+import history1 from "../../assets/svg/history1.svg";
 import ExtentedProfile from "./ExtentedProfile";
-import editPicture from '../assets/svg/editPicture.svg'
-import radheShyam from '../assets/svg/radheshyam.svg'
+import editPicture from "../../assets/svg/editPicture.svg";
+import radheShyam from "../../assets/svg/radheshyam.svg";
+import showToggle from "../../assets/svg/showToggle.svg";
 
 const PersonProfile = () => {
+  const { isOpen, onToggle } = useDisclosure();
   return (
     <>
       <Box
-        mx={{ base: "16px", md: "41px" }}
+        mx={{ base: "16px", md: "30px" }}
+        minW={"375px"}
         mt="24px"
         h="708pz"
         borderRadius="20px"
         border="1px solid #E5EAF2"
         background="#FFF"
         boxShadow="0px 0px 20px 0px rgba(0, 0, 0, 0.07)"
+        pos={"relative"}
       >
-        <Flex px={"20px"} mb={"18px"} >
-          <Box position={"relative"} minW={{ base: "70px", md: "128px" }}
-              minH={{ base: "70px", md: "128px" }}
-              maxH={{ base: "70px", md: "128px" }}
-              maxW={{ base: "70px", md: "128px" }}
-              mt={"15px"}>
+        <Flex px={"20px"} mb={"18px"}>
+          <Box
+            position={"relative"}
+            minW={{ base: "70px", md: "128px" }}
+            minH={{ base: "70px", md: "128px" }}
+            maxH={{ base: "70px", md: "128px" }}
+            maxW={{ base: "70px", md: "128px" }}
+            mt={"15px"}
+          >
             <Image
-              
-              h={ "inherit"}
-              w={ "inherit"}
+              h={"inherit"}
+              w={"inherit"}
               borderRadius="16px"
               src={radheShyam}
-              
             />
-            <Image w="40px" h="40px" position="absolute" bottom="0" right="0" src={editPicture}/>
+            <Image
+              w="40px"
+              h="40px"
+              position="absolute"
+              bottom="0"
+              right="0"
+              src={editPicture}
+            />
           </Box>
 
-          <Flex flexDirection="column" ml={"32px"}>
-            <Flex display={{base:"block", lg:"flex"}}> 
-              <Flex mt="20px">
-                <Box>
+          <Flex flexDirection="column" ml={"28px"} flexGrow={1}>
+            <Flex
+              display={{ base: "block", lg: "flex" }}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+            >
+              <Box pt={"20px"} pr={"26px"}>
+                <Text
+                  fontFamily="'Roboto', sans-serif"
+                  fontSize="12px"
+                  fontStyle="normal"
+                  fontWeight="400"
+                  lineHeight="normal"
+                >
+                  Applicant
+                </Text>
+                <Flex alignItems={"center"}>
                   <Text
-                    fontFamily="'Roboto', sans-serif"
-                    fontSize="12px"
+                    fontFamily="Poppins"
+                    fontSize={{ base: "18px", md: "28px" }}
                     fontStyle="normal"
-                    fontWeight="400"
+                    fontWeight="600"
                     lineHeight="normal"
+                    whiteSpace={"nowrap"}
                   >
-                    Applicant
+                    Rohan Mehra
                   </Text>
-                  <Flex alignItems={"center"}>
-                    <Text
-                      fontFamily="Poppins"
-                      fontSize={{base:"18px",md:"28px"}}
-                      fontStyle="normal"
-                      fontWeight="600"
-                      lineHeight="normal"
-                      whiteSpace={"nowrap"}
-                    >
-                      Rohan Mehra
-                    </Text>
-                    <Image ml={{base:"90px",md:"19px"}} w="20px" h="12px" src={group191} />
-                  </Flex>
-                </Box>
-              </Flex>
+                  <Image
+                    ml={{ base: "90px", md: "19px" }}
+                    w="20px"
+                    h="12px"
+                    src={group191}
+                  />
+                </Flex>
+              </Box>
 
-              <Flex mt={9} ml={{base:"23px",md:44}} >
-                <HStack alignItems={"flex-start"} >
-                  <Flex alignItems={"center"} >
+              <Flex display={{ base: "block", md: "flex" }}>
+                <HStack alignItems={"center"}>
+                  <Flex alignItems={"center"}>
                     <Image w="16px" h="18px" src={groupCall} />
                     <Text
-                      ml="3px"
                       mr="6px"
                       fontSize="14px"
                       fontWeight="500"
@@ -98,11 +118,9 @@ const PersonProfile = () => {
 
                     <Image w="12px" h="8px" src={group4787} />
                   </Flex>
-                </HStack>
 
-                <HStack alignItems={"flex-start"}>
                   <Flex alignItems={"center"}>
-                    <Image ml="24px" w="14px" h="20px" src={groupLocation} />
+                    <Image w="14px" h="20px" src={groupLocation} />
                     <Text
                       mr="6px"
                       ml="8px"
@@ -115,77 +133,81 @@ const PersonProfile = () => {
                     </Text>
                     <Image w="12px" h="8px" src={group4787} />
                     <Image
-                      ml="22.85px"
-                      w="22.64px"
-                      h="15.92px"
+                      ml="22px"
+                      w="22px"
+                      h="16px"
                       src={groupMail}
                     />
                   </Flex>
-                </HStack>
-              </Flex>
 
-              <Flex mt="22px">
-                <Divider
-                  ml="23px"
-                  mr="23px"
-                  h="50px"
-                  w="1px"
-                  orientation="vertical"
-                />
-                <Box>
-                  <Text fontSize="12px" fontWeight="400" opacity="0.5">
-                    Overall Progress
-                  </Text>
-                  <Flex>
-                    <Text fontSize="15px" fontWeight="700" mt="8px" mr="12px">
-                      29%
+                  <Divider
+                    ml="20px"
+                    mr="20px"
+                    h="50px"
+                    orientation={"vertical"}
+                    display={{ base: "none", md: "block" }}
+                  />
+                  <Divider
+                    ml="20px"
+                    mr="20px"
+                    h="50px"
+                    orientation={"horizontal"}
+                    display={{ base: "block", md: "none" }}
+                  />
+                  <Box>
+                    <Text fontSize="12px" fontWeight="400" opacity="0.5">
+                      Overall Progress
                     </Text>
-                    <Progress
-                      borderRadius="10px"
-                      w="118px"
-                      colorScheme="green"
-                      height="20px"
-                      value={29}
-                    />
-                  </Flex>
-                </Box>
-                <Divider
-                  ml="24px"
-                  mr="24px"
-                  h="50px"
-                  w="1px"
-                  orientation="vertical"
-                />
-                <Box>
-                  <Text mb="7px" opacity="0.5" fontSize="12px" fontWeight="400">
-                    Loan Status
-                  </Text>
-                  <Box
-                    textAlign="center "
-                    borderRadius="4px"
-                    w=" 84px"
-                    h="23px"
-                    fontSize="15px"
-                    fontWeight="400"
-                    color="#FFF"
-                    background="#F17E14"
-                    mr="34px"
-                  >
-                    Pending
+                    <Flex>
+                      <Text fontSize="15px" fontWeight="700" mt="8px" mr="12px">
+                        29%
+                      </Text>
+                      <Progress
+                        borderRadius="10px"
+                        w="118px"
+                        colorScheme="green"
+                        height="20px"
+                        value={29}
+                      />
+                    </Flex>
                   </Box>
-                </Box>
+                  <Divider mr="24px" h="50px" w="1px" orientation="vertical" />
+                  <Box>
+                    <Text
+                      mb="7px"
+                      opacity="0.5"
+                      fontSize="12px"
+                      fontWeight="400"
+                    >
+                      Loan Status
+                    </Text>
+                    <Box
+                      textAlign="center "
+                      borderRadius="4px"
+                      w=" 84px"
+                      h="23px"
+                      fontSize="15px"
+                      fontWeight="400"
+                      color="#FFF"
+                      background="#F17E14"
+                      
+                    >
+                      Pending
+                    </Box>
+                  </Box>
+                </HStack>
               </Flex>
             </Flex>
 
             {/** Sanctioned Amount */}
-            <Flex mt={"14px"} display={{ base: "none", md:"flex" }}>
+            <Flex mt={"14px"} display={{ base: "none", md: "flex" }}>
               <HStack>
                 <Text
                   opacity={"0.5"}
                   color={"#3E4954"}
                   fontSize={"12px"}
                   fontWeight={"400"}
-                  mr={"25px"}
+                  mr={"22px"}
                 >
                   Sanctioned Amount
                 </Text>
@@ -229,7 +251,7 @@ const PersonProfile = () => {
                   color={"#3E4954"}
                   fontSize={"12px"}
                   fontWeight={"400"}
-                  mr={"18px"}
+                  mr={"14px"}
                 >
                   Product
                 </Text>
@@ -289,14 +311,14 @@ const PersonProfile = () => {
             </Flex>
 
             {/*** Customer Code */}
-            <Flex mt={"22px"} display={{ base: "none", md:"flex"  }}>
+            <Flex mt={"22px"} display={{ base: "none", md: "flex" }}>
               <HStack>
                 <Text
                   opacity={"0.5"}
                   color={"#3E4954"}
                   fontSize={"12px"}
                   fontWeight={"400"}
-                  mr={"23px"}
+                  mr={"18px"}
                 >
                   Customer Code
                 </Text>
@@ -353,9 +375,9 @@ const PersonProfile = () => {
               mt={"15px"}
               justifyContent={"space-between"}
               alignItems={"center"}
-              display={{ base: "none", md:"flex" }}
+              display={{ base: "none", md: "flex" }}
             >
-              <Flex>
+              <Flex alignItems={"center"}>
                 <HStack>
                   <Text
                     opacity={"0.5"}
@@ -412,7 +434,7 @@ const PersonProfile = () => {
                 <Image h="14px" w="14px" src={history1} />
               </Flex>
 
-              <Flex gap={"10px"} mb="27px">
+              <Flex gap={"10px"} alignItems={"center"}>
                 <Button
                   h="32px"
                   w="62px"
@@ -454,6 +476,17 @@ const PersonProfile = () => {
                 >
                   Repayment Schedule
                 </Button>
+                <Box
+                  h="40px"
+                  w="40px"
+                  position={isOpen ? "absolute" : "initial"}
+                  right={"18px"}
+                  bottom={"17px"}
+                  onClick={onToggle}
+                  transform={!isOpen ? "rotate(0deg)" : "rotate(180deg)"}
+                >
+                  <Image src={showToggle} />
+                </Box>
               </Flex>
             </Flex>
           </Flex>
@@ -461,7 +494,10 @@ const PersonProfile = () => {
         <Flex mt={"9px"} justifyContent={"center"}>
           <Divider width="95%" orientation="horizontal" />
         </Flex>
-        <ExtentedProfile />
+
+        <Collapse in={isOpen} animateOpacity>
+          <ExtentedProfile />
+        </Collapse>
       </Box>
     </>
   );

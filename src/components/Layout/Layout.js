@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
           openSidebarState={showSidebar}
         />
       </GridItem>
-      <GridItem maxW={showSidebar ? "84vw" : "100vw"} transform={showSidebar && "translateX(16vw)"}>
+      <GridItem overflowX={showSidebar ? "hidden" : "auto"} maxW={showSidebar ? "82.93vw " : "100vw"} transform={showSidebar && "translateX(16vw)"}>
         <Navbar
           openSidebarfunction={openSidebar}
           openSidebarState={showSidebar}

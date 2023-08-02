@@ -33,10 +33,10 @@ const Tab = () => {
   return (
     <>
       <Flex
-      ml={"24px"}
+      ml={"20px"}
         h="43px"
         mt="18px"
-        mr={{base:"0px",md:"45px"}}
+        mr={{base:"0px",md:"26px"}}
         justifyContent="space-between"
         overflowX={{ base: "scroll", md: "auto" }}
         gap={{ base: "20px", md: "20px" }}

@@ -31,10 +31,8 @@ const PersonProfile = () => {
   return (
     <>
       <Box
-        mx={{ base: "16px", md: "30px" }}
-        minW={"375px"}
+        mx={{ base: "16px", md: "20px" }}
         mt="24px"
-        h="708pz"
         borderRadius="20px"
         border="1px solid #E5EAF2"
         background="#FFF"
@@ -66,13 +64,13 @@ const PersonProfile = () => {
             />
           </Box>
 
-          <Flex flexDirection="column" ml={"28px"} flexGrow={1}>
+          <Flex flexDirection="column" ml={"24px"} flexGrow={1}>
             <Flex
               display={{ base: "block", lg: "flex" }}
               justifyContent={"space-between"}
               alignItems={"center"}
             >
-              <Box pt={"20px"} pr={"26px"}>
+              <Box pt={"20px"}>
                 <Text
                   fontFamily="'Roboto', sans-serif"
                   fontSize="12px"
@@ -132,12 +130,7 @@ const PersonProfile = () => {
                       15 A Atlantis tower...
                     </Text>
                     <Image w="12px" h="8px" src={group4787} />
-                    <Image
-                      ml="22px"
-                      w="22px"
-                      h="16px"
-                      src={groupMail}
-                    />
+                    <Image ml="20px" w="20px" h="16px" src={groupMail} />
                   </Flex>
 
                   <Divider
@@ -158,7 +151,7 @@ const PersonProfile = () => {
                     <Text fontSize="12px" fontWeight="400" opacity="0.5">
                       Overall Progress
                     </Text>
-                    <Flex>
+                    <Flex alignItems={"center"}>
                       <Text fontSize="15px" fontWeight="700" mt="8px" mr="12px">
                         29%
                       </Text>
@@ -190,7 +183,6 @@ const PersonProfile = () => {
                       fontWeight="400"
                       color="#FFF"
                       background="#F17E14"
-                      
                     >
                       Pending
                     </Box>
@@ -207,7 +199,7 @@ const PersonProfile = () => {
                   color={"#3E4954"}
                   fontSize={"12px"}
                   fontWeight={"400"}
-                  mr={"22px"}
+                  mr={"18px"}
                 >
                   Sanctioned Amount
                 </Text>
@@ -403,9 +395,7 @@ const PersonProfile = () => {
                     </TagLabel>
                     <TagCloseButton color={"#000"} />
                   </Tag>
-                </HStack>
 
-                <HStack ml={"20px"} mr={"22px"}>
                   <Tag
                     size={"sm"}
                     borderRadius="full"
@@ -425,6 +415,7 @@ const PersonProfile = () => {
                 </HStack>
 
                 <Image
+                  ml="14px"
                   h="14px"
                   w="14px"
                   transform={`rotate(90deg)`}

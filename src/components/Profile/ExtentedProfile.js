@@ -35,7 +35,7 @@ const ExtentedProfile = () => {
         <Grid
           mt={"30px"}
           mb={"40px"}
-          px={"52px"}
+          px={"40px"}
           templateColumns={{
             base: "repeat(1,1fr)",
             md: "repeat(2, 1fr)",
@@ -55,8 +55,6 @@ const ExtentedProfile = () => {
             );
           })}
         </Grid>
-       
-      {/* </Collapse> */}
     </>
   );
 };

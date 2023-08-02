@@ -139,7 +139,7 @@ const UpcomingPtp = () => {
             <ChevronRightIcon w="20px" h="20px" mr={"40px"} ml={"164px"} display={{base:"flex", md:"none"}}/>
           </Flex>
         
-        <Box display={{base:"none", md: "flex"}}>
+        <Box display={{base:"none", md: "flex"}} justifyContent={"center"}>
 
         <UpcomingTable />
         </Box>

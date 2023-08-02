@@ -9,7 +9,7 @@ import {
   Tabs,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { Fragment } from "react";
 import PTPLog from "../TabComponents/PTPLog";
 import ActionHistory from "../TabComponents/ActionHistory";
 import EscalationHistory from "../TabComponents/EscalationHistory";
@@ -36,7 +36,7 @@ const TabsAction = () => {
           {tabHeader.map((obj, index) => {
             return (
               <Box 
-              key={index}> 
+              key={obj.name + index}> 
                  <Tab
                 _selected={{
                   fontWeight: "700",
@@ -78,7 +78,7 @@ const TabsAction = () => {
       <Box display={{ base: "block", md: "none" }}>
         {tabHeader.map((obj, index) => {
           return (
-            <>
+            <Fragment key={index}>
             <Flex alignItems={"center"} justifyContent={"space-between"} w="100vw" >
               <Text
               ml={"16px"}
@@ -89,7 +89,7 @@ const TabsAction = () => {
                 fontSize={"20px"}
                 fontWeight={"700"}
                 whiteSpace={"nowrap"}
-                key={index}
+                
               >
                 {obj.name}
               </Text>
@@ -97,7 +97,7 @@ const TabsAction = () => {
              
             </Flex>
             <Divider orientation="horizontal" w="100vw" />
-            </>
+            </Fragment>
             
           );
         })}

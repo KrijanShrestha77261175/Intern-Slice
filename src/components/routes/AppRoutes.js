@@ -4,6 +4,9 @@ import { NAVIGATION_ROUTES } from "./routes.constant";
 import Layout from "../Layout/Layout";
 import Dashboard from "../Dashboard/Dashboard";
 import Body from "../Body";
+// import SignUp from "../SignUp/index"
+import SignUp from "../SignUp";
+import Login from "../Login";
 
 const AppRoutes = () => {
   const navigate = useNavigate();
@@ -26,6 +29,21 @@ const AppRoutes = () => {
         </Layout>
         )
     },
+
+    {
+      path: NAVIGATION_ROUTES.SIGNUP,
+      element: (
+         <SignUp/>
+      )
+  },
+
+  
+  {
+    path: NAVIGATION_ROUTES.LOGIN,
+    element: (
+       <Login/>
+    )
+},
   ];
 
   const route = useRoutes(routes);

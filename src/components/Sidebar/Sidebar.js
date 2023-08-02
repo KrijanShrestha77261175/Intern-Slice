@@ -8,12 +8,12 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronLeftIcon, HamburgerIcon } from "@chakra-ui/icons";
 import logo from "../../assets/svg/logo.svg";
 import sidebarOrder from "../../assets/svg/sidebarOrder.svg";
-import { Link as RouterLink } from "react-router-dom";
-import { NAVIGATION_ROUTES } from "../routes/routes.constant";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import { NAVIGATION_ROUTES, NAVIGATION_ROUTES_COMPONENT } from "../routes/routes.constant";
 
 const Sidebar = ({ openSidebarfunction, openSidebarState }) => {
   const sidebarContent = [
@@ -27,6 +27,13 @@ const Sidebar = ({ openSidebarfunction, openSidebarState }) => {
   const changeComponent = (name) => {
     setSelectedComponent(name);
   };
+  const location = useLocation();
+  useEffect(()=> {
+    const { pathname } = location;
+    setSelectedComponent(NAVIGATION_ROUTES_COMPONENT[pathname]); //NAVIGATION_ROUTES_COMPONENT[pathname]
+  }, [])
+
+
   return (
     <Collapse in={openSidebarState} animateOpacity>
     <Box
@@ -50,6 +57,7 @@ const Sidebar = ({ openSidebarfunction, openSidebarState }) => {
           w="20px"
           color={"#FFF"}
           onClick={() => openSidebarfunction()}
+          cursor={"pointer"}
         />
         <ChevronLeftIcon
           h="24px"

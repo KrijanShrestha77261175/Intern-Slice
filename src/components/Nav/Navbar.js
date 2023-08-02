@@ -54,7 +54,7 @@ const Navbar = ({openSidebarfunction, openSidebarState  }) => {
         boxShadow="0px 8px 12px 0px rgba(0, 0, 0, 0.04)"
       >
         <Flex alignItems="center" display={openSidebarState ? "none" : "flex"}>
-          <HamburgerIcon onClick={()=>openSidebarfunction() } mr="20px" display={{ base: "none", md: "block" }} />
+          <HamburgerIcon onClick={()=>openSidebarfunction() } mr="20px" display={{ base: "none", md: "block" }} cursor={"pointer"}/>
           <ChevronLeftIcon
             h="24px"
             w="48px"

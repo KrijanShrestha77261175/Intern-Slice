@@ -3,7 +3,6 @@ import Tab from "./HeaderTab/Tab";
 import Pagenation from "./Pagenation";
 import { Box } from "@chakra-ui/react";
 import SaveNExit from "./SaveNExit";
-import Footer from "./Footer";
 import FloatingBox from "./FloatingBox";
 
 const Body = () => {

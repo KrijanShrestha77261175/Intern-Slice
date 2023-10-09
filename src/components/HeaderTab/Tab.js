@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import Collection from "./Collection";
 import { useNavigate } from "react-router-dom";
 import Content from "../Content";
-import PersonProfile from '../Profile/PersonProfile'
+import PersonProfile from '../Pages/Profile/PersonProfile'
 
 const Tab = () => {
   const sliderLeft = [

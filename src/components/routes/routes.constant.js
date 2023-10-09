@@ -1,11 +1,16 @@
 export const NAVIGATION_ROUTES = {
-    DASHBOARD:"/",
+    LOGIN: "/",
+    DASHBOARD:"/dashboard",
     PROFILE: "/user-profile",
     SIGNUP: "/signup",
-    LOGIN: "/login",
+    USERS: "/users",
+    POSTS: "/posts"
 }
 
 export const NAVIGATION_ROUTES_COMPONENT = {
-    "/": "Dashboard",
+    "/" : "Login",
+    "/dashboard": "Dashboard",
     "/user-profile": "Profile",
+    "/users": "Users",
+    "/posts": "Posts"
 }

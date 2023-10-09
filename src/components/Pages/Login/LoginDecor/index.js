@@ -1,7 +1,7 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
-import womanTab from "../../../assets/svg/women with tab.png";
-import thunderbolt from "../../../assets/svg/thunderbolt.png"
+import womanTab from "../../../../assets/svg/women with tab.png";
+import thunderbolt from "../../../../assets/svg/thunderbolt.png"
 
 const index = () => {
   return (

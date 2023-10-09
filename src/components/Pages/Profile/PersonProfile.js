@@ -14,17 +14,17 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import group191 from "../../assets/svg/Group191.svg";
-import groupCall from "../../assets/svg/GroupCall.svg";
-import group4787 from "../../assets/svg/Group4787.svg";
-import groupLocation from "../../assets/svg/GroupLocation.svg";
-import groupMail from "../../assets/svg/GroupMail.svg";
-import addBtn from "../../assets/svg/ADD.svg";
-import history1 from "../../assets/svg/history1.svg";
+import group191 from "../../../assets/svg/Group191.svg";
+import groupCall from "../../../assets/svg/GroupCall.svg";
+import group4787 from "../../../assets/svg/Group4787.svg";
+import groupLocation from "../../../assets/svg/GroupLocation.svg";
+import groupMail from "../../../assets/svg/GroupMail.svg";
+import addBtn from "../../../assets/svg/ADD.svg";
+import history1 from "../../../assets/svg/history1.svg";
 import ExtentedProfile from "./ExtentedProfile";
-import editPicture from "../../assets/svg/editPicture.svg";
-import radheShyam from "../../assets/svg/radheshyam.svg";
-import showToggle from "../../assets/svg/showToggle.svg";
+import editPicture from "../../../assets/svg/editPicture.svg";
+import radheShyam from "../../../assets/svg/radheshyam.svg";
+import showToggle from "../../../assets/svg/showToggle.svg";
 
 const PersonProfile = () => {
   const { isOpen, onToggle } = useDisclosure();

@@ -1,13 +1,20 @@
 import {
+  AddIcon,
   ChevronDownIcon,
   ChevronLeftIcon,
+  EditIcon,
+  ExternalLinkIcon,
   HamburgerIcon,
+  RepeatIcon,
 } from "@chakra-ui/icons";
-import { Image, Flex, Box, Text } from "@chakra-ui/react";
+import { Image, Flex, Box, Text, Menu, MenuButton, MenuList, MenuItem, IconButton } from "@chakra-ui/react";
 import logo from "../../assets/svg/logo.svg";
 import flameLogo from "../../assets/svg/flameLogo.png";
 import { useEffect, useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
+import {CgLogOut} from "react-icons/cg"
+import logout from "../../assets/svg/logout.png"
+import {logoutFunction} from "../utils/deleteToken"
 
 const Navbar = ({openSidebarfunction, openSidebarState  }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -104,7 +111,31 @@ const Navbar = ({openSidebarfunction, openSidebarState  }) => {
               </Box>
             </Flex>
           </Box>
-          <ChevronDownIcon width="28px" height="24px" ml="13px" />
+
+          <Menu>
+  <MenuButton
+    as={IconButton}
+    aria-label='Options'
+    icon={<ChevronDownIcon  width="28px" height="24px" ml="13px" />}
+    variant='flushed'
+  />
+  <MenuList>
+    {/* <MenuItem icon={<AddIcon />}>
+      New Tab
+    </MenuItem>
+    <MenuItem icon={<ExternalLinkIcon />}>
+      New Window
+    </MenuItem>
+    <MenuItem icon={<RepeatIcon />} >
+      Open Closed Tab
+    </MenuItem> */}
+    <MenuItem onClick={logoutFunction} >
+    <Image src={logout} w="16px" h="16px" mr="10px"/>
+      Logout
+    </MenuItem>
+  </MenuList>
+</Menu>
+        
         </Flex>
       </Flex>
     </>

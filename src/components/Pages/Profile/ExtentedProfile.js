@@ -1,6 +1,6 @@
 import { Box, Button, Collapse, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import showToggle from "../../assets/svg/showToggle.svg";
+import showToggle from "../../../assets/svg/showToggle.svg";
 
 const ExtentedProfile = () => {
   const toFillData = [
